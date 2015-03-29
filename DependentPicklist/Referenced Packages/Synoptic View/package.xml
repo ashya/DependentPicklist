@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Package xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Synoptic View</fullName>
+    <apiAccessLevel>Unrestricted</apiAccessLevel>
+    <description>&quot;Account Synoptic View&quot; allows you to see a graphical &quot;Account Hierarchy View&quot;. 
+&quot;Contact Synoptic View&quot; allows you to see a graphical &quot;Contact Org Chart View&quot;. 
+This new version let you configure the information to display in the charts.
+
+(this functionality used the &quot;Google Chart API&quot;)</description>
+    <namespacePrefix>Synoptic</namespacePrefix>
+    <types>
+        <members>SynopticAccountView</members>
+        <members>SynopticConf</members>
+        <members>SynopticContactView</members>
+        <name>ApexClass</name>
+    </types>
+    <types>
+        <members>SynopticAccountView</members>
+        <members>SynopticConf</members>
+        <members>SynopticContactView</members>
+        <name>ApexPage</name>
+    </types>
+    <types>
+        <members>Synoptic_View</members>
+        <name>CustomApplication</name>
+    </types>
+    <types>
+        <members>SynopticView_Field__c.Field_Name__c</members>
+        <members>SynopticView_Field__c.Object_Name__c</members>
+        <members>SynopticView_Field__c.Sort_Order__c</members>
+        <name>CustomField</name>
+    </types>
+    <types>
+        <members>SynopticAccountView_Title</members>
+        <members>SynopticContactView_Title</members>
+        <members>SynopticView_Back</members>
+        <members>SynopticView_Conf_AccountFields</members>
+        <members>SynopticView_Conf_Add</members>
+        <members>SynopticView_Conf_Available</members>
+        <members>SynopticView_Conf_ContactFields</members>
+        <members>SynopticView_Conf_CstFields</members>
+        <members>SynopticView_Conf_Down</members>
+        <members>SynopticView_Conf_Info</members>
+        <members>SynopticView_Conf_Remove</members>
+        <members>SynopticView_Conf_RemovedFields</members>
+        <members>SynopticView_Conf_Save</members>
+        <members>SynopticView_Conf_Selected</members>
+        <members>SynopticView_Conf_SelectedFields</members>
+        <members>SynopticView_Conf_StdFields</members>
+        <members>SynopticView_Conf_SubTitle</members>
+        <members>SynopticView_Conf_Title</members>
+        <members>SynopticView_Conf_Up</members>
+        <members>SynopticView_Title</members>
+        <name>CustomLabel</name>
+    </types>
+    <types>
+        <members>CustomLabels</members>
+        <name>CustomLabels</name>
+    </types>
+    <types>
+        <members>SynopticView_Field__c</members>
+        <name>CustomObject</name>
+    </types>
+    <types>
+        <members>SynopticView_Field__c</members>
+        <members>Synoptic_View_Configuration</members>
+        <name>CustomTab</name>
+    </types>
+    <types>
+        <members>Synoptic_View</members>
+        <members>Synoptic_View/Synoptic_View_Icon.png</members>
+        <members>Synoptic_View/Synoptic_View_Logo.png</members>
+        <name>Document</name>
+    </types>
+    <types>
+        <members>SynopticView_Field__c-Synoptic View Field Layout</members>
+        <name>Layout</name>
+    </types>
+    <types>
+        <members>SynopticView_Field__c.All</members>
+        <name>ListView</name>
+    </types>
+    <types>
+        <members>Synoptic_Resources</members>
+        <name>StaticResource</name>
+    </types>
+    <types>
+        <members>Account.Synoptic_View</members>
+        <members>Contact.Synoptic_View</members>
+        <name>WebLink</name>
+    </types>
+    <version>31.0</version>
+</Package>
