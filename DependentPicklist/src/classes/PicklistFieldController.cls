@@ -25,10 +25,13 @@ public with sharing class PicklistFieldController {
         	System.debug('FIELD NOT FOUND --.> ' + controllingField + ' OR ' + dependentField);
         	return objResults;     
         }
+        //All controlling field values and dependent field values are stored in a List of PicklistEntry values
         List<Schema.PicklistEntry> contrEntries = objFieldMap.get(controllingField).getDescribe().getPicklistValues();
         List<Schema.PicklistEntry> depEntries = objFieldMap.get(dependentField).getDescribe().getPicklistValues();
         objFieldMap = null;
         List<Integer> controllingIndexes = new List<Integer>();
+        //All controlling values are saved in a Map of String and List<String>
+        //This is my final return result
         for(Integer contrIndex=0; contrIndex<contrEntries.size(); contrIndex++){            
             Schema.PicklistEntry ctrlentry = contrEntries[contrIndex];
             String label = ctrlentry.getLabel();
@@ -41,14 +44,17 @@ public with sharing class PicklistFieldController {
                Schema.PicklistEntry depentry = depEntries[dependentIndex];
                objEntries.add(depentry);
         } 
+        //All the dependent values are JSON-ized amd de-JSON-ized and stored in PicklistEntryWrapper representation
         objJsonEntries = (List<PicklistEntryWrapper>)JSON.deserialize(JSON.serialize(objEntries), List<PicklistEntryWrapper>.class);
         List<Integer> indexes;
         for (PicklistEntryWrapper objJson : objJsonEntries){
             if (objJson.validFor==null || objJson.validFor==''){
                 continue;
             }
+            //Get the indexes for each dependent value
             indexes = bitSetObj.testBits(objJson.validFor,controllingIndexes);
-            for (Integer idx : indexes){                
+            for (Integer idx : indexes){    
+            	//Get the controlling value at the index            
                 String contrLabel = contrEntries[idx].getLabel();
                 objResults.get(contrLabel).add(objJson.label);
             }
